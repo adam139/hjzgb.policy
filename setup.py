@@ -25,6 +25,7 @@ setup(name='hjzgb.policy',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'plone.browserlayer',
           # -*- Extra requirements: -*-
       ],
       extras_require={
