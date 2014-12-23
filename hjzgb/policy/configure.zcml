@@ -14,6 +14,13 @@
       description="Installs the hjzgb.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="hjzgb.policy"
+      directory="profiles/uninstall"
+      description="Uninstalls hjzgb.policy package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />      
   <!-- -*- extra stuff goes here -*- -->
     <include package=".browser"/>  
 </configure>
