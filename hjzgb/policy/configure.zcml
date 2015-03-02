@@ -16,7 +16,7 @@
       />
   <genericsetup:registerProfile
       name="uninstall"
-      title="hjzgb.policy"
+      title="uninstall hjzgb.policy"
       directory="profiles/uninstall"
       description="Uninstalls hjzgb.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
