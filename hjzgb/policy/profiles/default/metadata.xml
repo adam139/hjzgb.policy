@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <metadata>
   <version>1000</version>
+  <dependencies>
+    <dependency>profile-my315ok.wechat:default</dependency>
+    <dependency>profile-my315ok.products:default</dependency>
+    <dependency>profile-hjzgb.theme:default</dependency>
+  </dependencies>
 </metadata>

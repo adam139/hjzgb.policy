@@ -1,18 +1,25 @@
 <registry>
+	<records interface="Products.CMFPlone.interfaces.ISecuritySchema" prefix="plone">
+    <value key="enable_self_reg">False</value>      
+	</records>
+	<records interface="Products.CMFPlone.interfaces.controlpanel.ISecuritySchema" prefix="plone">
+    <value key="enable_user_folders">False</value>        
+	</records>	
+		
   <record name="plone.app.theming.interfaces.IThemeSettings.absolutePrefix" interface="plone.app.theming.interfaces.IThemeSettings" field="absolutePrefix">
     <field type="plone.registry.field.TextLine">
       <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="convert_relative_url">Convert relative URLs in the theme file to absolute paths using this prefix.</description>
       <required>False</required>
       <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="absolute_url_prefix">Absolute URL prefix</title>
     </field>
-    <value>/++theme++collective.diazotheme.bootstrap</value>
+    <value>/++theme++hjzgb.theme</value>
   </record>
   <record name="plone.app.theming.interfaces.IThemeSettings.currentTheme" interface="plone.app.theming.interfaces.IThemeSettings" field="currentTheme">
     <field type="plone.registry.field.TextLine">
       <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="current_theme_description">The name of the current theme, i.e. the one applied most recently.</description>
       <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="current_theme">Current theme</title>
     </field>
-    <value>collective.diazotheme.bootstrap</value>
+    <value>hjzgb.theme</value>
   </record>
   <record name="plone.app.theming.interfaces.IThemeSettings.doctype" interface="plone.app.theming.interfaces.IThemeSettings" field="doctype">
     <field type="plone.registry.field.ASCIILine">
@@ -37,6 +44,6 @@
       <required>False</required>
       <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="rules_file">Rules file</title>
     </field>
-    <value>/++theme++collective.diazotheme.bootstrap/hjzgb.xml</value>
+    <value>/++theme++hjzgb.theme/rules.xml</value>
   </record>
 </registry>
