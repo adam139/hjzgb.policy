@@ -1,11 +1,10 @@
 <registry>
-	<records interface="Products.CMFPlone.interfaces.ISecuritySchema" prefix="plone">
-    <value key="enable_self_reg">False</value>      
-	</records>
-	<records interface="Products.CMFPlone.interfaces.controlpanel.ISecuritySchema" prefix="plone">
-    <value key="enable_user_folders">False</value>        
-	</records>	
-		
+  <records prefix="plone.resources/bootstrap-tabs"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++static/components/bootstrap/js/tab.js</value>
+
+      <value key="deps">jquery</value>
+ </records>	
   <record name="plone.app.theming.interfaces.IThemeSettings.absolutePrefix" interface="plone.app.theming.interfaces.IThemeSettings" field="absolutePrefix">
     <field type="plone.registry.field.TextLine">
       <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="convert_relative_url">Convert relative URLs in the theme file to absolute paths using this prefix.</description>
