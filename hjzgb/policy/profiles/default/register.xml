@@ -1,10 +1,32 @@
+<?xml version="1.0"?>
 <registry>
+<!-- Resources -->
+  <records prefix="plone.resources/jqswfobj"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++resource++xsgs.policy/jquery.swfobj.min.js</value>
+      <value key="deps">jquery</value>
+ </records>	
   <records prefix="plone.resources/bootstrap-tabs"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="js">++plone++static/components/bootstrap/js/tab.js</value>
-
       <value key="deps">jquery</value>
- </records>	
+ </records>
+  <records prefix="plone.resources/bootstrap-carousel"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++static/components/bootstrap/js/carousel.js</value>
+      <value key="css">
+        <element>++plone++static/components/bootstrap/less/carousel.less</element>
+      </value>
+      <value key="deps">jquery</value>
+ </records>
+ <records prefix="plone.resources/hjzgb-homepage"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++resource++hjzgb.policy/homepage-custom.js</value>          
+    <value key="css">
+      <element>++resource++hjzgb.policy/homepage.css</element>
+    </value>
+    <value key="deps">jquery</value>
+</records>	
   <record name="plone.app.theming.interfaces.IThemeSettings.absolutePrefix" interface="plone.app.theming.interfaces.IThemeSettings" field="absolutePrefix">
     <field type="plone.registry.field.TextLine">
       <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="convert_relative_url">Convert relative URLs in the theme file to absolute paths using this prefix.</description>

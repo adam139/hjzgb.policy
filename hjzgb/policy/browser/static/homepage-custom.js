@@ -1,21 +1,11 @@
 require([
-  'jquery','roll','ajax-fetchimg','bootstrap-carousel','bootstrap-tabs'
-], function($,roll,ajaximg,carousel,tabs) {
+  'jquery','jqswfobj','bootstrap-carousel'
+], function($,jqswf,carousel) {
   'use strict';
-$(document).ready(function(){ 
-	$(".nav-tabs a").mouseover(function (e) {
-		  e.preventDefault()
-		  $(this).tab('show')
-		});
-	$(".nav-tabs").on("click","a",function (e) {
-		  e.preventDefault();
-		  var url = $(this).attr("data-js-target");
-		  window.location.href = url;
-		  return false;
-		});	
-	//rolltext(".roll-wrapper");
-	var root = $("#roll_chanpin").attr("data-root");
-	var ajaxurl = root + "/gongludongtai/tupianxinwen/@@barsview_mini";
-	ajaxfetchimg("roll_chanpin", ajaxurl, ".roll_image", 1);
+$(document).ready(function(){
+//		rolltext(".roll-wrapper");
+	var h1=$('.carousel').height();
+	var w1=$('#video').width();
+		genswf("http://player.56.com/v_NzE3MTE5MTc.swf","transparent",h1,w1,"#video");
 	});
 });

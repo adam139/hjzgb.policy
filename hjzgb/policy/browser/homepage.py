@@ -1,26 +1,18 @@
 #-*- coding: UTF-8 -*-
-from five import grok
-from Acquisition import aq_inner
-from Products.CMFCore.interfaces import ISiteRoot
-from Products.CMFPlone.resources import add_bundle_on_request
 from Products.CMFPlone.resources import add_resource_on_request
 from Products.Five.browser import BrowserView
-from plone.app.layout.navigation.interfaces import INavigationRoot
 from my315ok.products.product import Iproduct
 from plone.memoize.instance import memoize
 from collective.diazotheme.bootstrap.browser.homepage import HomepageView as baseview
-from Products.CMFCore import permissions
 from xsgs.policy.browser.interfaces import IThemeSpecific 
-grok.templatedir('templates') 
-
 
 class FrontpageView(baseview):
-     
-    grok.context(ISiteRoot)
-    grok.template('homepage')
-    grok.name('index.html')
-    grok.layer(IThemeSpecific)
-    grok.require('zope2.View')      
+    
+    def __init__(self,context, request):
+        # Each view instance receives context and request as construction parameters
+        self.context = context
+        self.request = request
+        add_resource_on_request(self.request, 'hjzgb-homepage')            
 
     
     def carouselid(self):
@@ -120,36 +112,18 @@ class FrontpageView(baseview):
                 
               
 # roll zone
-
-
         
     def rollheader(self):
         return u"新闻"
     
     def rollmore(self):
-        return "http://www.xsgs998.com/news/"               
+        return "http://www.hjzgb.cn/news/"
+    
+# video player
+
+    def swf_locid(self):
+        "return swf locator's id "
         
-               
+        return "video"               
         
-# outer html zone
-    
-    def outhtmlheader(self):
-        return u"论坛热帖"
-    
-    def outhtmlmore(self):
-        return "http://plone.315ok.org/"           
-    
-    def dataparameter(self):
-        data = {
-                'code':"utf-8",
-                'filter':True,
-                'target':"http://plone.315ok.org/",
-                'tag':"div",
-                'cssid':"portal_block_52_content",
-                'cssclass':"dxb_bc",
-                'attribute':"",
-                'regexp':"",
-                'index':0,   #fetch first block
-                'interval':24
-                }
-        return data          
+      
