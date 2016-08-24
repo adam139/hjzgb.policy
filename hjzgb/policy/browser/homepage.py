@@ -2,9 +2,10 @@
 from Products.CMFPlone.resources import add_resource_on_request
 from Products.Five.browser import BrowserView
 from my315ok.products.product import Iproduct
+from my315ok.products.productfolder import Iproductfolder
 from plone.memoize.instance import memoize
 from collective.diazotheme.bootstrap.browser.homepage import HomepageView as baseview
-from xsgs.policy.browser.interfaces import IThemeSpecific 
+from hjzgb.policy.browser.interfaces import IThemeSpecific 
 
 class FrontpageView(baseview):
     
@@ -25,7 +26,7 @@ class FrontpageView(baseview):
             return ""
         
     @memoize
-    def carouselresult(self):
+    def carouselresult(self,id=None):
         
         out = """
         <div id="carousel-generic" class="carousel slide">
@@ -69,11 +70,29 @@ class FrontpageView(baseview):
 </div>
         """ 
         
-        braindata = self.catalog()({'object_provides':Iproduct.__identifier__, 
+
+        if id ==None:
+            braindata = self.catalog()({'object_provides':Iproduct.__identifier__, 
                                     'b_start':0,
                                     'b_size':3,
                              'sort_order': 'reverse',
                              'sort_on': 'created'})
+        else:
+            folder = self.catalog()({'object_provides':Iproductfolder.__identifier__,
+                                    'id':id})
+            if not bool(folder):
+                braindata = self.catalog()({'object_provides':Iproduct.__identifier__, 
+                                    'b_start':0,
+                                    'b_size':3,
+                             'sort_order': 'reverse',
+                             'sort_on': 'created'})
+            else:
+                braindata = self.catalog()({'object_provides':Iproduct.__identifier__,
+                                            'path':folder[0].getPath(),
+                                            'b_start':0,
+                                            'b_size':3,
+                                            'sort_order': 'reverse',
+                                            'sort_on': 'created'})         
         brainnum = len(braindata)
         if brainnum == 0:return out        
 
