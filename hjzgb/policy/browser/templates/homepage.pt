@@ -16,7 +16,7 @@
 
        <div class="row">         
          <div class="col-xs-12 col-md-4">
-         	<div tal:replace="structure python: view.carouselresult(id='shuanshuihuaxilieyi')">outer</div>        	
+         	<div tal:replace="structure python: view.carouselresult(id='bars')">outer</div>        	
          </div>
                   
          <div class="col-xs-12 col-md-4">
