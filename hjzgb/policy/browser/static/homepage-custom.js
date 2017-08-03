@@ -1,11 +1,11 @@
 require([
-  'jquery','jqswfobj','bootstrap-carousel'
-], function($,jqswf,carousel) {
+  'jquery','bootstrap-carousel'
+], function($,carousel) {
   'use strict';
 $(document).ready(function(){
-//		rolltext(".roll-wrapper");
 	var h1=$('.carousel').height();
-	var w1=$('#video').width();
-		genswf("http://player.56.com/v_NzE3MTE5MTc.swf","transparent",h1,w1,"#video");
-	});
+	var w1=$('.carousel').width();
+	$('#video').find('iframe').attr('width',w1).attr('height',h1);
+
+});
 });

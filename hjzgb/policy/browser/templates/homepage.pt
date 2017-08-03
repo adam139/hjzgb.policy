@@ -56,7 +56,7 @@
   					</div> <!--Tab panes end -->
          </div>
        	<div class="col_xs_12 col-md-4">       			
-					<div id="video">here will be replaced by swf</div>	    		
+					<div id="video"><iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=k05339nczko&tiny=0&auto=0" allowfullscreen="true"></iframe></div>	    		
        	</div>      
      </div>
      </div>     
